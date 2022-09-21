@@ -11,7 +11,7 @@ const countOnly = function(allItems, itemsToCount) {
   //Create new variable that is empty object to create count
   let countObject = { };
   //Iterate through allItems array
-  for (i = 0; i < allItems.length; i++) {
+  for (let i = 0; i < allItems.length; i++) {
     //Declare variable item to correspond to array value in allItems
     const item = allItems[i];
     //Check truth or false value of itemstoCount key value, while comparing key value and item variable
