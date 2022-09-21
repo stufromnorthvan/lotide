@@ -18,4 +18,8 @@ const countLetters = function(string) {
   return letterCount;
 };
 
-console.log(countLetters("LighthouseLabs"));
+let tester = countLetters("lighthouse in the house");
+
+console.log(assertEqual(tester['h'], 4));
+console.log(assertEqual(tester['l'], 1));
+console.log(assertEqual(tester['i'], 2));
