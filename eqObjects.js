@@ -7,16 +7,17 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(arrOne, arrTwo) {
+  let compareResult = true;
   if (arrOne.length !== arrTwo.length) {
-    return false;
+    compareResult = false;
   }
   for (x = 0; x < arrOne.length; x++) {
     if (arrOne[x] !== arrTwo[x]) {
-      return false;
+      compareResult = false;
     }
   }
-  return true
-};
+  return compareResult;
+}
 
 const eqObjects = function(object1, object2) {
   let object1Keys = Object.keys(object1);
@@ -36,16 +37,16 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-console.log(assertEqual(eqObjects(cd, dc), true)); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2), false); // => false
 
 // const ab = { a: "1", b: "2" };
 // const ba = { b: "2", a: "1" };
-// console.log(assertEqual(eqObjects(ab, ba), true)); // => true
+// assertEqual(eqObjects(ab, ba), true); // => true
 
 // const abc = { a: "1", b: "2", c: "3" };
-// console.log(assertEqual(eqObjects(ab, abc), false)); // => false
+// assertEqual(eqObjects(ab, abc), false); // => false
